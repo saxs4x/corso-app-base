@@ -4,13 +4,24 @@ import {
     Text, 
     StyleSheet, 
     TouchableOpacity,
-    FlatList, 
-    useColorScheme} 
+    FlatList} 
 from 'react-native';
+import ColorItem from '../components/ColorItem';
 
 const ColorScreen = () => {
     const [colors, setColors] = useState([]);
-    console.log(colors)
+    const [red, setRed] = useState(0);
+    const [green, setGreen] = useState(0);
+    const [blue, setBlue] = useState(0);
+
+    const randomColor = () => {
+        setRed(Math.floor(Math.random() * 256));
+        setGreen(Math.floor(Math.random() * 256));
+        setBlue(Math.floor(Math.random() * 256));
+    
+        return `rgb(${red}, ${green}, ${blue})`;
+    } 
+    
    return (
     <View>
         <TouchableOpacity style={styles.button} onPress={() => {
@@ -22,22 +33,15 @@ const ColorScreen = () => {
             data={colors}
             keyExtractor={(item) => item}
             renderItem={({item}) => {
-                return <View style={styles.colorBox}>
-                    <Text>{item}</Text>
-                    </View>
+                return <ColorItem   redP={red} 
+                                    greenP={green} 
+                                    blueP={blue}/>
             }}
         />
     </View>
    )
 }
 
-const randomColor = () => {
-    const red = Math.floor(Math.random() * 256);
-    const green = Math.floor(Math.random() * 256);
-    const blue = Math.floor(Math.random() * 256);
-
-    return `rgb(${red}, ${green}, ${blue})`;
-} 
 
 const styles = StyleSheet.create({
     button: {
