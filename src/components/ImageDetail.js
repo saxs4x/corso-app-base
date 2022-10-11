@@ -14,20 +14,22 @@ const ImageDetail = props => {
 
 const styles = StyleSheet.create({
     containerStyle: {
-        borderWidth: 1,
-        borderColor: '#696969b8',
+        borderWidth: 4,
+        borderColor: '#5FB0FF',
         borderRadius: 5,
         marginBottom: 24,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-around'
+        justifyContent: 'space-between'
     },
     imageStyle: {
         width: 200,
         height: 133
     },
     textStyle: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        padding: 10,
+        color: '#5FB0FF'
     }
     
 });

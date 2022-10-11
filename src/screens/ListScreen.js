@@ -14,11 +14,12 @@ const ListScreen = () => {
     ];
 
     return (
-        <View>
-            <FlatList 
+        <View style={styles.boxView}>
+            <FlatList
+                style={styles.listStyle} 
                 data={courseList}
                 showsVerticalScrollIndicator={false}
-                renderItem={({item}) => <Text style={styles.listStyle}>{item.name}</Text>}
+                renderItem={({item}) => <Text style={styles.listItemStyle}>{item.name}</Text>}
                 keyExtractor={(item, key) => item.id}
              />
         </View>
@@ -26,7 +27,21 @@ const ListScreen = () => {
 };
 
 const styles = StyleSheet.create({
-    
+    boxView: {
+        alignItems: 'stretch',
+        margin: 10
+    },
+    listItemStyle: {
+        padding: 20,
+        marginBottom: 10,
+        borderWidth: 4,
+        borderColor: '#C665E2',
+        backgroundColor: '#FFD966',
+        color: '#C665E2',
+        fontWeight: '500',
+        alignSelf: 'stretch',
+        textAlign: 'center'
+    }
 });
 
 export default ListScreen;

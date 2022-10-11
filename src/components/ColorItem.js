@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {
     View, 
     Button, 
+    Text,
     StyleSheet
 } from 'react-native';
 
@@ -14,11 +15,9 @@ const ColorItem = (props) => {
 
     return (
         <View>
-            <View style={{
-                        width: 100, 
-                        height: 100, 
-                        backgroundColor: `rgb(${red}, 
-                        ${green}, ${blue})`}}>
+            <View style={{backgroundColor: `rgb(${red}, 
+                ${green}, ${blue})`}}>
+        <Text>{`rgb(${red}, ${green}, ${blue})`}</Text>
             </View>
             <Button title="Aumenta Rosso" 
                     onPress={() => setRed(red + 100)}
